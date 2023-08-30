@@ -26,10 +26,18 @@ Yazdığınız sorguları buradan test edebilirsiniz: [https://ergineer.com/asse
 
 Aşağıda istenilen sonuçlara ulaşabilmek için gerekli SQL sorgularını yazın.
 
-MIN-MAX, COUNT-AVG-SUM, GROUP BY, JOINS (INNER, OUTER, LEFT, RIGHT
-#ilk 3 soruyu join kullanmadan yazın. 1) Öğrencinin adını, soyadını ve kitap aldığı tarihleri listeleyin.
-SELECT ograd, ogrsoyad, atarih FROM ogrenci, islem WHERE ogrenci.ogrno = islem.ogrno 2) Fıkra ve hikaye türündeki kitapların adını ve türünü listeleyin.
-SELECT kitapadi, turadi FROM kitap, tur WHERE kitap.turno = tur.turno AND turadi IN('fıkra', 'hikaye') 3) 10B veya 10C sınıfındaki öğrencilerin numarasını, adını, soyadını ve okuduğu kitapları listeleyin.
+    MIN-MAX, COUNT-AVG-SUM, GROUP BY, JOINS (INNER, OUTER, LEFT, RIGHT
+    #ilk 3 soruyu join kullanmadan yazın.
+
+    1) Öğrencinin adını, soyadını ve kitap aldığı tarihleri listeleyin.
+
+     SELECT ograd, ogrsoyad, atarih FROM ogrenci, islem WHERE ogrenci.ogrno = islem.ogrno
+
+    2) Fıkra ve hikaye türündeki kitapların adını ve türünü listeleyin.
+
+     SELECT kitapadi, turadi FROM kitap, tur WHERE kitap.turno = tur.turno AND turadi IN('fıkra', 'hikaye')
+
+    3) 10B veya 10C sınıfındaki öğrencilerin numarasını, adını, soyadını ve okuduğu kitapları listeleyin.
 
      SELECT ogrenci.ogrno, ograd, ogrsoyad, kitapadi FROM ogrenci, islem, kitap WHERE ogrenci.ogrno = islem.ogrno  AND islem.kitapno = kitap.kitapno AND ogrenci.sinif IN('10A', '10C')
 
